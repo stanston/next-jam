@@ -5,10 +5,10 @@ import { formatDate } from "lib/utilities";
 import Image from "next/image";
 import Button from "components/parts/Button";
 
-import HomePost from "components/pages/Home/Post";
+import PostsPost from "components/pages/Posts/Post";
 
-export default function HomePostPage() {
-  const { data, error } = HomePost();
+export default function PostsPostPage() {
+  const { data, error } = PostsPost();
 
   return (
     <>

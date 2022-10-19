@@ -16,7 +16,7 @@ type PostType = {
   content: string;
 };
 
-export default function HomePost() {
+export default function PostsPost() {
   const router = useRouter();
 
   const fetcher = async (endpoint: string): Promise<PostType> => {

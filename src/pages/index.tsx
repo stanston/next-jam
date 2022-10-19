@@ -69,7 +69,7 @@ export default function HomePage() {
           <div css={card}>
             {data.contents.map(
               ({ id, title, image, publishedAt }: PostsType) => (
-                <Link href={id} key={id}>
+                <Link href={`/posts/${id}`} key={id}>
                   <a>
                     <h2>{title}</h2>
                     <div>
