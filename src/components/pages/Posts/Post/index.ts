@@ -19,10 +19,12 @@ type PostType = {
 export default function PostsPost() {
   const router = useRouter();
 
+  const contentId = router.query.id as string;
+
   const fetcher = async (endpoint: string): Promise<PostType> => {
     const post = await client.get({
       endpoint,
-      contentId: router.query.id as string,
+      // contentId,
       queries: {
         fields: "id,title,publishedAt,image,content",
       },
@@ -30,7 +32,7 @@ export default function PostsPost() {
     return post;
   };
 
-  const { data, error } = useSWR("posts", fetcher);
+  const { data, error } = useSWR(`posts/${contentId}`, fetcher);
 
   return {
     data,
